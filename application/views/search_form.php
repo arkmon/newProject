@@ -44,7 +44,7 @@
             var names = '<table class="table table-hover">';
             $.each(data, function(index, element) {
                 if (index > 0) {names;}
-                names += "'<tr><a href="index.php/lecDisplay/display id=element.id"><td>"+element.firstName +"</td> "+"<td>"+ element.lastName+ "</td> <td>"+ element.department+"<td/> <td> "+ element.officeDay+"</td><td>"+element.AvStatus+"</td></a></tr>'"+ "<br/>";
+                names += "<tr>'<a href="index.php/lecDisplay/display id=element.id">'<td>"+element.firstName +"</td> "+"<td>"+ element.lastName+ "</td> <td>"+ element.department+"<td/> <td> "+ element.officeDay+"</td><td>"+element.AvStatus+"</td></a></tr>'"+ "<br/>";
             });
             names+='';
             $('#result').html(names);
