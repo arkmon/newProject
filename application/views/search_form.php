@@ -6,7 +6,9 @@
 
     <title>ECWM604 Advanced Web Technologies - Coursework 2 </title>
     <script language="javascript" src="/testDev/js/jquery.js"></script>
+    <script language="javascript" src="/testDev/js/bootstrap-rowlink.js"></script>
     <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-rowlink.css"rel="stylesheet">
   
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
      <style>
@@ -36,7 +38,8 @@
             </form>
             <button id="reset">Reset</button>
             </br></br>
-            <span><div id="result" class="span5"></div></span></table>
+            <form action="" method="POST">
+            <span><div id="result" class="span5"></div></span></table>    </form>
 
 <script language="javascript">
     $('#search').click(function() {
@@ -44,7 +47,9 @@
             var names = '<table class="table table-hover">';
             $.each(data, function(index, element) {
                 if (index > 0) {names;}
-                names += "<tr>'<a href="index.php/lecDisplay/display id=element.id">'<td>"+element.firstName +"</td> "+"<td>"+ element.lastName+ "</td> <td>"+ element.department+"<td/> <td> "+ element.officeDay+"</td><td>"+element.AvStatus+"</td></a></tr>'"+ "<br/>";
+               // names += "<tr>'<a href="index.php/lecDisplay/display id=element.id">'<td>"+element.firstName +"</td> "+"<td>"+ element.lastName+ "</td> <td>"+ element.department+"<td/> <td> "+ element.officeDay+"</td><td>"+element.AvStatus+"</td></a></tr>'"+ "<br/>";
+                names += "<tr><td>"+element.firstName +"</td> "+"<td>"+ element.lastName+ "</td> <td>"+ element.department+"<td/> <td> "+ element.officeDay+"</td><td>"+element.AvStatus+"</td></tr>"+ "<br/>";
+                //names += '<tr><td><a href="index.php/lecDisplay/display?id='+element.firstName +'>'+element.firstName +'</a></td> '+'<td class="nolink"><a href="#">'+ element.lastName+ "</a></td> <td>"+ element.department+"<td/> <td> "+ element.officeDay+"</td><td>"+element.AvStatus+"</td></tr>"+ "<br/>";
             });
             names+='';
             $('#result').html(names);
